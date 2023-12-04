@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>ESPN Game Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="game-tracker">
+            <h1>Game Tracker</h1>
+            <div class="scoreboard">
+                <!-- Score Boxes -->
+                <div class="box" id="catches">
+                    <button onclick="updateScore('catches', 1)">+</button>
+                    <span id="catches-score">0</span>
+                    <button onclick="updateScore('catches', -1)">-</button>
+                </div>
+                <!-- Repeat similar structure for other boxes (dodges, throws, hits, blocks) -->
+
+                <!-- Tickers -->
+                <div class="box" id="hits">
+                    <span id="hits-ticker">0</span>
+                    <span>Hits</span>
+                </div>
+                <div class="box" id="dodges">
+                    <span id="dodges-ticker">0</span>
+                    <span>Dodges</span>
+                </div>
+                <div class="box" id="blocks">
+                    <span id="blocks-ticker">0</span>
+                    <span>Blocks</span>
+                </div>
+                <div class="box" id="catches-ticker">
+                    <span id="catches-ticker">0</span>
+                    <span>Catches</span>
+                </div>
+                <div class="box" id="outs">
+                    <span id="outs-ticker">0</span>
+                    <span>Outs</span>
+                </div>
+
+                <div class="save-section">
+                    <!-- Buttons for saving and loading games -->
+                    <button onclick="saveGame()">Save Game</button>
+                    <select id="saved-games" onchange="loadSavedGame()">
+                        <!-- Saved games will be listed here dynamically -->
+                    </select>
+                    <button onclick="renameGame()">Rename Game</button>
+
+                    <!-- Button to open the video window -->
+                    <button onclick="openVideoWindow()">Open Video</button>
+                </div>
+            </div>
+
+            <!-- Video window container -->
+            <div id="videoWindow" style="display: none;">
+                <!-- YouTube player will be embedded here -->
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
